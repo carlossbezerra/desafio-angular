@@ -1,59 +1,83 @@
-# DesafioAngular
+# Desafio Angular - CRUD de Posts e Comentários
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.7.
+Este é um projeto Angular que implementa um CRUD (Create, Read, Update, Delete) de posts, utilizando uma API pública, além de adicionar a funcionalidade de comentários. O projeto utiliza Tailwind CSS para estilização e um gerenciamento "in memory" dos dados, sincronizando as alterações com a API.
 
-## Development server
+## Funcionalidades Principais
 
-To start a local development server, run:
+- **Listagem de Posts:** Exibição dos posts em uma tabela na página inicial.
+- **Criação de Posts:** Adição de novos posts através de um modal.
+- **Edição de Posts:** Modificação de posts existentes através de um modal.
+- **Exclusão de Posts:** Remoção de posts da lista.
+- **Gerenciamento "In Memory":** Manutenção de uma cópia dos posts no lado do cliente para uma experiência mais rápida.
+- **Sincronização com API:** Todas as operações de CRUD são sincronizadas com a API pública `https://jsonplaceholder.typicode.com/posts`.
+- **Comentários:** Cada post pode ter comentários associados, também com operações de CRUD.
+- **Estilização com Tailwind CSS:** Interface limpa e responsiva utilizando o framework Tailwind CSS.
 
-```bash
-ng serve
-```
+## Requisitos
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- [Node.js](https://nodejs.org/) (versão recomendada: 18 ou superior)
+- [npm](https://www.npmjs.com/) (geralmente incluído com o Node.js)
+- [Angular CLI](https://cli.angular.io/) (versão recomendada: 17 ou superior)
 
-## Code scaffolding
+## Como Executar o Projeto
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+1. **Clonar o Repositório:**
 
-```bash
-ng generate component component-name
-```
+    ```bash
+    git clone <URL_DO_SEU_REPOSITÓRIO>
+    cd desafio-angular
+    ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+2. **Instalar as Dependências:**
 
-```bash
-ng generate --help
-```
+    ```bash
+    npm install
+    ```
 
-## Building
+3. **Executar a Aplicação:**
 
-To build the project run:
+    ```bash
+    ng serve
+    ```
 
-```bash
-ng build
-```
+    A aplicação estará disponível em [http://localhost:4200](http://localhost:4200).
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Estrutura do Projeto
 
-## Running unit tests
+- `src/app/`: Contém os arquivos principais do projeto Angular.
+    - `components/`: Contém os componentes.
+        - `post/`: Componente para gerenciar os posts.
+            - `post.component.ts`: Lógica do componente de posts.
+            - `post.component.html`: Interface do componente de posts.
+            - `post.component.css`: Estilos do componente de posts.
+    - `services/`: Contém os serviços.
+        - `api.service.ts`: Serviço para consumir a API.
+        - `in-memory.service.ts`: Serviço para gerenciar os posts localmente.
+    - `app.config.ts`: Arquivo de configuração principal da aplicação.
+    - `app.routes.ts`: Arquivo de configuração das rotas da aplicação.
+    - `app.component.ts`: Componente raiz da aplicação.
+    - `app.component.html`: Template do componente raiz.
+- `tailwind.config.js`: Arquivo de configuração do Tailwind CSS.
+- `src/styles.css`: Arquivo de estilos globais da aplicação.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Tecnologias Utilizadas
 
-```bash
-ng test
-```
+-   **Angular:** Framework para construção de aplicações web.
+-   **TypeScript:** Linguagem de programação baseada em JavaScript.
+-   **Tailwind CSS:** Framework para estilização da interface.
+-   **Node.js:** Ambiente de execução para JavaScript.
+-   **npm:** Gerenciador de pacotes para JavaScript.
 
-## Running end-to-end tests
+## Próximos Passos
 
-For end-to-end (e2e) testing, run:
+-   Implementar testes unitários e de integração para o projeto.
+-   Adicionar paginação para lidar com grandes volumes de dados.
+-   Melhorar a usabilidade e acessibilidade da interface.
+-   Adicionar validação de formulários.
 
-```bash
-ng e2e
-```
+## Contribuição
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Contribuições são sempre bem-vindas! Se você encontrar algum problema ou tiver alguma sugestão, sinta-se à vontade para abrir uma *issue* ou enviar um *pull request*.
 
-## Additional Resources
+## Licença
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
